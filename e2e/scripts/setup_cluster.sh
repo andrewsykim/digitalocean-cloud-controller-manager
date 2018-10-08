@@ -28,7 +28,7 @@ echo "==> waiting until kubernetes cluster is ready..."
 n=0
 until [ $n -ge 300 ]
 do
-  if [[ $(kubectl get no wc -l) -eq 4 ]]; then
+  if [[ $(kubectl get no | wc -l) -eq 4 ]]; then
     echo "==> kubernetes cluster is ready"
     exit 0
   fi

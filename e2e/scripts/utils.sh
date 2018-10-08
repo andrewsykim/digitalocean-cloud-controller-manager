@@ -18,3 +18,8 @@ function install_kubectl {
   fi
 }
 
+function install_kubetest {
+  if ! kubetest --help > /dev/null; then
+    go get -u k8s.io/test-infra/kubetest
+  fi
+}
